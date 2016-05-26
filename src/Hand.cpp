@@ -12,29 +12,25 @@ using namespace std;
 #include "Hand.h"
 
 Hand::Hand() {
-	int i;
-	for (i=0; i<5; i++) {
-		Card newCard();
-		handArray[i] = newCard;
-	}
-}
-
-Hand::Hand(Card* cards){
-	int cardSize = sizeof(Card);
-	int numCards = (sizeof(cards)/cardSize);
-	for (int i=0; i< numCards; i++) {
-		handArray[i] = cards[i];
-	}
+	handArray = new Card[5];
+	//int i;
+	//for (i=0; i<5; i++) {
+	//	Card newcard;
+	//	handArray[i] = newcard;
+	//}
 }
 
 Hand::Hand(const Hand &H){
 	int i=0;
+	handArray = new Card[5];
 	for (i=0; i < 5; i++) {
 		handArray[i] = H.handArray[i];
 	}
 }
 
-Hand::~Hand(){}
+Hand::~Hand(){
+	delete [] handArray;
+}
 
 ostream& operator<< (ostream &output, const Hand &H){
 	int i;

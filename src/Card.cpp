@@ -10,13 +10,19 @@ using namespace std;
 #include "Card.h"
 
 Card::Card() {
-	cout << "Card Copy Constructor blank" << endl;
-	lookup = -1;
-	value = -1;
-	suit = 'N';
+	value = 0;
+	suit = 0;
+	lookup = 'N';
 }
 
-Card::Card(int a): lookup(a) {
+Card::Card(Card* cardptr){
+	value = cardptr->value;
+	suit = cardptr->suit;
+	lookup = cardptr->lookup;
+}
+
+Card::Card(int a) {
+	lookup = a;
 	value = lookup % 13;
 	if (lookup < 13) suit = 'S';
 	else if (lookup < 26) suit = 'H';

@@ -10,7 +10,7 @@
 
 class Deck {
 private:
-	Card deckarray[52];
+	Card *deckarray;
 	int seed;
 public:
 	void shuffle();

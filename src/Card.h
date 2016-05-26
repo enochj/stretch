@@ -17,6 +17,7 @@ public:
 	Card();
 	Card(int a);
 	Card(const Card &obj);
+	Card(Card* cardptr);
 	friend ostream &operator<<(ostream &output, const Card &C);
 	int getValue();
 	int getSuit();

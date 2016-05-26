@@ -10,10 +10,9 @@
 
 class Hand {
 private:
-	Card handArray[5];
+	Card *handArray;
 public:
 	Hand();
-	Hand(Card* cards);
 	Hand(const Hand &H);
 	~Hand();
 	friend ostream& operator<< (ostream &output, const Hand &H);

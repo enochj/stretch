@@ -15,6 +15,7 @@ using namespace std;
 Deck::Deck() {
 	seed = rand();
 	int i;
+	deckarray = new Card[52];
 	for (i=0; i<52; i++) {
 		Card newCard(i);
 		deckarray[i] = newCard;
@@ -33,7 +34,9 @@ void Deck::shuffle() {
 	}
 }
 
-Deck::~Deck(void) {}
+Deck::~Deck(void) {
+	delete [] deckarray;
+}
 
 
 
